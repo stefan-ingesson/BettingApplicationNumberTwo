@@ -29,5 +29,9 @@ namespace BettingApplication.Models
         {
             return new ApplicationDbContext();
         }
+        public string Age { get; set; }
+        public string City { get; set; }
+        public string About_me { get; set; }
+
     }
 }

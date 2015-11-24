@@ -1,0 +1,74 @@
+﻿@model BettingApplication.Models.FacebookViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    })
+</script>
+
+<h2>@Model.Name</h2>
+
+<img src=@Model.ImageURL />
+<div>
+    @Html.LabelFor(model => model.City)
+    @Html.DisplayFor(model => model.City)
+    @Html.LabelFor(model => model.Age)
+    @Html.DisplayFor(model => model.Age)
+    @Html.LabelFor(model => model.About_me)
+    @Html.DisplayFor(model => model.About_me)
+
+
+</div>
+
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Edit</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Personlig information</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("ProfileEdit", "Account", FormMethod.Post, new { id = "form-accountedit-appt", @class = "full-form" }))
+                {
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.City)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.City)
+                        @Html.ValidationMessageFor(model => model.City)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Age)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Age)
+                        @Html.ValidationMessageFor(model => model.Age)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.About_me)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.About_me)
+                        @Html.ValidationMessageFor(model => model.About_me)
+                    </div>
+
+                    <button type="submit" id="accountprofileedit-submit" name="accountprofileedit-submit" value="Save" class="btn btn-primary" style="margin-left:5px;">Save</button>
+                }
+
+
+
+
+            </div>
+        </div>
+
