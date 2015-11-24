@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
+
+@{
+    ViewBag.Title = "MatchApi";
+}
+
+<h2>MatchApi</h2>
+
+<div id="current" class="well-sm">
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.homeTeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.result.goalsHomeTeam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.result.goalsAwayTeam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.awayTeamName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.homeTeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.result.goalsHomeTeam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.result.goalsAwayTeam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.awayTeamName)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+

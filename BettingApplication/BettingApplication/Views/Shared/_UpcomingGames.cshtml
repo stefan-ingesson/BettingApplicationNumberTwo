@@ -1,0 +1,71 @@
+﻿
+@using Microsoft.Ajax.Utilities
+@model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
+
+@{
+    ViewBag.Title = "_UpcomingGames";
+}
+
+
+<h2>Upcoming matches</h2>
+
+<div class="well-sm">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.homeTeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.awayTeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeTeamWins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Draw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AwayTeamWins)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.homeTeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.awayTeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    <label class="chk">@Html.CheckBoxFor(modelItem => item.HomeTeamWins, new { id = "chk1", name = "chk1" })</label>
+                </td>
+                <td>
+                    <label class="chk">@Html.CheckBoxFor(modelItem => item.Draw, new { id = "chk2", name = "chk2" })</label>
+                </td>
+                <td>
+                    <label class="chk">@Html.CheckBoxFor(modelItem => item.AwayTeamWins, new { id = "chk3", name = "chk3" })</label>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+<script>
+  $(function () {
+    $('input.chk').change(function () {
+      if ($('input.chk').length > 1) {
+        $('input.chk').prop('checked', false);
+        $(this).prop('checked', true);
+      }
+    });
+  });
+</script>

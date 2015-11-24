@@ -1,0 +1,1 @@
+E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingApplication\BettingApplication\ApiTest\obj\Debug\ApiTest.csprojResolveAssemblyReference.cache
