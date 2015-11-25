@@ -1,2 +1,3 @@
 E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingApplication\BettingApplication\ApiTest\obj\Debug\ApiTest.csprojResolveAssemblyReference.cache
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\ApiTest\obj\Debug\ApiTest.csprojResolveAssemblyReference.cache
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\ApiTest\obj\Debug\ApiTest.csprojResolveAssemblyReference.cache

@@ -59,23 +59,37 @@ namespace BettingApplication.Models
 
         public class Fixture
         {
+            public int Id { get; set; }
             public Links _links { get; set; }
+
             [Display(Name = "Date")]
             public string date { get; set; }
             public string status { get; set; }
             public int matchday { get; set; }
+
             [Display(Name = "Home")]
             public string homeTeamName { get; set; }
+
             [Display(Name = "Away")]
             public string awayTeamName { get; set; }
+
             public Result result { get; set; }
+
             [Display(Name = "1")]
             public bool HomeTeamWins { get; set; }
+
             [Display(Name = "X")]
             public bool Draw { get; set; }
+
             [Display(Name = "2")]
             public bool AwayTeamWins { get; set; }
         }
+
+      public class User : Fixture
+      {
+        public new int Id { get; set; }
+        public string Bet { get; set; }
+      }
 
         //public class RootObject
         //{

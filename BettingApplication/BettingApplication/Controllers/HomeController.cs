@@ -33,9 +33,6 @@ namespace BettingApplication.Controllers
             return View();
         }
       
-
-
-
         public ActionResult MatchApi()
         {
 
