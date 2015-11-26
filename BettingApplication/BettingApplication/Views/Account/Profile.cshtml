@@ -14,13 +14,20 @@
 
 <img src=@Model.ImageURL />
 <div>
-    @Html.LabelFor(model => model.City)
-    @Html.DisplayFor(model => model.City)
-    @Html.LabelFor(model => model.Age)
-    @Html.DisplayFor(model => model.Age)
-    @Html.LabelFor(model => model.About_me)
-    @Html.DisplayFor(model => model.About_me)
-
+    <ul>
+        <li>
+            @Html.LabelFor(model => model.City)
+            @Html.DisplayFor(model => model.City)
+        </li>
+        <li>
+            @Html.LabelFor(model => model.Age)
+            @Html.DisplayFor(model => model.Age)
+        </li>
+        <li>
+            @Html.LabelFor(model => model.About_me)
+            @Html.DisplayFor(model => model.About_me)
+        </li>
+    </ul>
 
 </div>
 

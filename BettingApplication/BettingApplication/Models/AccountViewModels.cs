@@ -118,7 +118,7 @@ namespace BettingApplication.Models
         public string Age { get; set; }
         public string City { get; set; }
         public string About_me { get; set; }
-        public FacebookViewModel() { }
+        
 
     }
 }

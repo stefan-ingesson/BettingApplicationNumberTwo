@@ -6,10 +6,7 @@ namespace BettingApplication.Models
 {
     public class Fixtures
     {
-        public class ApplicationDbContext : DbContext
-        {
-            public DbSet<Fixture> Fixtures { get; set; }
-        }
+       
 
         //public List<Link> _links { get; set; }
         //public int count { get; set; }

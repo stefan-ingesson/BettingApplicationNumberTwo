@@ -53,6 +53,9 @@ E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingAppl
 E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingApplication\BettingApplication\BettingApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingApplication\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
 E:\Skolarbete\Utveckling av databasdrivna logistiksystem\Grupparbete\BettingApplication\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
+C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csprojResolveAssemblyReference.cache
+C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.Form.resources
+C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csproj.GenerateResource.Cache
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.dll.config
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.dll
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.pdb
@@ -107,6 +110,6 @@ C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplicatio
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csprojResolveAssemblyReference.cache
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
 C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
+C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.profile.resources
