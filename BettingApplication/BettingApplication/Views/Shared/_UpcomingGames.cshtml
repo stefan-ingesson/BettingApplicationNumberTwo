@@ -1,4 +1,5 @@
-﻿@using BettingApplication.Models
+﻿@using System.Web.Mvc.Html
+@using BettingApplication.Models
 @using Microsoft.Ajax.Utilities
 @model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
 
@@ -10,7 +11,7 @@
 <h2>Upcoming matches</h2>
 
 
-<div class="well-sm">
+@*<div class="well-sm">
   <table class="table table-striped">
     <tr>
       <th>
@@ -35,47 +36,111 @@
 
     @using (Html.BeginForm())
     {
+      int counter = 0;
       foreach (var item in Model)
       {
+        counter++;
+        if (counter > 1)
+        {
+          <tr>
+            <td>
+              @Html.DisplayFor(modelItem => item.homeTeamName)
+            </td>
+            <td>
+              @Html.DisplayFor(modelItem => item.awayTeamName)
+            </td>
+            <td>
+              @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+              @Html.RadioButtonFor(modelItem => item.HomeTeamWins, item.Id, new { @class = "chk", id = "chk1", name = "1" })
+            </td>
+            <td>
+              @Html.RadioButtonFor(modelItem => item.Draw, item.Id, new { @class = "chk", id = "chk2", name = "1" })
+            </td>
+            <td>
+              @Html.RadioButtonFor(modelItem => item.AwayTeamWins, item.Id, new { @class = "chk", id = "chk3", name = "1" })
+            </td>
+          </tr>
+        }
+      }
+    }
+  </table>
 
+  <button id="" type="button" class="btn btn-success" data-container="well" data-toggle="popover"
+          data-placement="bottom">
+    Place your bet´s
+  </button>
+</div>*@
+
+<div class="well-sm">
+  <table class="table table-striped">
+
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.homeTeamName)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.awayTeamName)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.date)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.HomeTeamWins)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Draw)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.AwayTeamWins)
+      </th>
+    </tr>
+
+@using (Html.BeginForm()) 
+    {
+      var list = Model.ToList();
+  
+      for (int i = 0; i < list.Count; i++)
+      {
         <tr>
           <td>
-            @Html.DisplayFor(modelItem => item.homeTeamName)
+            @Html.DisplayFor(modelItem => list[i].homeTeamName)
           </td>
           <td>
-            @Html.DisplayFor(modelItem => item.awayTeamName)
+            @Html.DisplayFor(modelItem => list[i].awayTeamName)
           </td>
           <td>
-            @Html.DisplayFor(modelItem => item.date)
+            @Html.DisplayFor(modelItem => list[i].date)
           </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.HomeTeamWins, item.Id, new { @class = "chk", id = "chk1", name = "chk1" })
-            </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.Draw, item.Id, new { @class = "chk", id = "chk2", name = "chk2" })
-            </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.AwayTeamWins, item.Id, new { @class = "chk", id = "chk3", name = "chk3" })
-            </td>
+          <td name="1">
+            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          </td>
+          <td name="1">
+            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          </td>
+          <td name="1">
+            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          </td>
         </tr>
       }
     }
-    </table>
-    <button id="" type="button" class="btn btn-success" data-container="well" data-toggle="popover"
-            data-placement="bottom">
-      Place your bet´s
-    </button>
-    </div>
+  </table>
+  <button id="" type="button" class="btn btn-success" data-container="well" data-toggle="popover"
+          data-placement="bottom">
+    Place your bet´s
+  </button>
+  </div>
 
 
 
-    @*<script>
-        $(function () {
-          $('input.chk').change(function () {
-            if ($('input.chk').length > 1) {
-              $('input.chk').prop('checked', false);
-              $(this).prop('checked', true);
-            }
-          });
+  @*<script>
+      $(function () {
+        $('input.chk').change(function () {
+          if ($('input.chk').length > 1) {
+            $('input.chk').prop('checked', false);
+            $(this).prop('checked', true);
+          }
         });
-      </script>*@
+      });
+    </script>*@

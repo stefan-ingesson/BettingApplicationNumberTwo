@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
@@ -63,7 +64,8 @@ namespace BettingApplication.Models
             public Links _links { get; set; }
 
             [Display(Name = "Date")]
-            public string date { get; set; }
+            public DateTime date { get; set; }
+
             public string status { get; set; }
             public int matchday { get; set; }
 
