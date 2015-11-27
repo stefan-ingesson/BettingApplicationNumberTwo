@@ -78,13 +78,13 @@ namespace BettingApplication.Models
             public Result result { get; set; }
 
             [Display(Name = "1")]
-            public bool HomeTeamWins { get; set; }
+            public bool? HomeTeamWins { get; set; }
 
             [Display(Name = "X")]
-            public bool Draw { get; set; }
+            public bool? Draw { get; set; }
 
             [Display(Name = "2")]
-            public bool AwayTeamWins { get; set; }
+            public bool? AwayTeamWins { get; set; }
         }
 
       public class User : Fixture

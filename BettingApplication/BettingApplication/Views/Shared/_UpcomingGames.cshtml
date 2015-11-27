@@ -1,4 +1,5 @@
 ﻿@using System.Web.Mvc.Html
+@using System.Web.UI.WebControls
 @using BettingApplication.Models
 @using Microsoft.Ajax.Utilities
 @model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
@@ -97,10 +98,12 @@
       </th>
     </tr>
 
-@using (Html.BeginForm()) 
+    @using (Html.BeginForm("PlaceUserBets", "Home", FormMethod.Post))
     {
+      @Html.AntiForgeryToken()
+      
       var list = Model.ToList();
-  
+
       for (int i = 0; i < list.Count; i++)
       {
         <tr>
@@ -113,23 +116,24 @@
           <td>
             @Html.DisplayFor(modelItem => list[i].date)
           </td>
-          <td name="1">
-            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          <td>
+            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, true, new {Name="radio"})
           </td>
-          <td name="1">
-            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          <td>
+            @Html.RadioButtonFor(modelItem => list[i].Draw, true, new {Name = "radio" })
           </td>
-          <td name="1">
-            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, list[i].Draw, list[i].AwayTeamWins)
+          <td>
+            @Html.RadioButtonFor(modelItem => list[i].AwayTeamWins, true, new {Name = "radio" })
           </td>
         </tr>
       }
     }
   </table>
-  <button id="" type="button" class="btn btn-success" data-container="well" data-toggle="popover"
-          data-placement="bottom">
-    Place your bet´s
-  </button>
+  <div class="form-group">
+    <div class="col-md-offset-10 col-md-10">
+      <input type="submit" value="Place your bet" class="btn btn-success" />
+    </div>
+  </div>
   </div>
 
 

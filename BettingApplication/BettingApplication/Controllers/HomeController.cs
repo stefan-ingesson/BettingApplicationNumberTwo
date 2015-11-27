@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Mvc;
@@ -87,10 +89,28 @@ namespace BettingApplication.Controllers
             return PartialView(fixtures.fixtures);
         }
 
-        public ActionResult PlaceBets()
+
+      public ActionResult PlaceBets()
+      {
+        return View("PlaceBets");
+      }
+  
+      //Indexsidan för PlaceBets! Place bet and POST!
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PlaceUserBets([Bind(Include = "Id,UserEmail,PlacedBets")]UserDetails userDetail)
         {
-            return View();
+          if (ModelState.IsValid)
+          {
+            db.Entry(userDetail).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Profile","Account");
+          }
+
+          return View(userDetail);
         }
+
+        
 
         public ViewResult ListTable()
         {
