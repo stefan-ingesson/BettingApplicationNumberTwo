@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -68,18 +69,30 @@ namespace BettingApplication.Models
         public class Standing
         {
             public Links2 _links { get; set; }
+            [DisplayName("PO")]
             public int position { get; set; }
+             [DisplayName("Team")]
             public string teamName { get; set; }
+            [DisplayName("PM")]
             public int playedGames { get; set; }
+            [DisplayName("Points")]
             public int points { get; set; }
+            [DisplayName("Goals")]
             public int goals { get; set; }
+            [DisplayName("Goals against")]
             public int goalsAgainst { get; set; }
+            [DisplayName("Goal difference")]
             public int goalDifference { get; set; }
+            [DisplayName("W")]
             public int wins { get; set; }
+            [DisplayName("D")]
             public int draws { get; set; }
+            [DisplayName("L")]
             public int losses { get; set; }
             public Home home { get; set; }
             public Away away { get; set; }
+
+           
         }
 
 
