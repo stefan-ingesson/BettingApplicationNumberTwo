@@ -10,9 +10,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BettingApplication.Models;
 using Facebook;
+using System.Net;
 
 namespace BettingApplication.Controllers
 {
+
     [Authorize]
     public class AccountController : Controller
     {
@@ -469,8 +471,9 @@ namespace BettingApplication.Controllers
 
         //GET: Account/Profile
         [Authorize]
-        public async Task<ActionResult> Profile()
+        public async Task<ActionResult> ProfileEdit(string id)
         {
+         
             var profile = new ApplicationUser();
             var facebook = new FacebookViewModel();
             var claimsforUser = await UserManager.GetClaimsAsync(User.Identity.GetUserId());
