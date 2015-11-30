@@ -3,29 +3,36 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 style="font-size: 60px;">BET4HONOR - IN IT TO WIN IT</h1>
+    <p class="lead"></p>
+    <div class="jumbotronContent">
+
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/d6wRkzCW5qI" frameborder="1" allowfullscreen></iframe>
+        <p style="margin-left: 25px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut odio in eros sodales imperdiet. Nulla facilisi. Morbi elementum pellentesque metus, semper malesuada erat luctus quis. In in orci mattis urna facilisis porttitor at posuere nibh. Sed mattis elit a cursus venenatis. Nam ac viverra tortor. Fusce egestas commodo facilisis.
+
+            Etiam fringilla neque eu sapien fringilla consectetur. Curabitur non dapibus odio, sed rhoncus ante. Maecenas ipsum elit, mattis id urna id, blandit vulputate lacus. Praesent nec massa dui. Praesent ante nisl, mattis quis lacus vel, egestas porttitor mauris. Aenean accumsan lorem quis tortor mattis tristique. Fusce elementum lorem laoreet rutrum ornare. Maecenas porta efficitur felis, in iaculis arcu egestas at.
+        </p>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Look at league standings</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+          In order to place a good bet, make sure to take a look at the current league standings! 
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <a class="btn btn-primary" @Html.ActionLink("League table", "ListTable", "Home") </a>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Place a bet</h2>
+        <p>Do you feel confident? Head over and place your bet instantly!</p>
+        <a class="btn btn-primary" @Html.ActionLink("Place a bet", "PlaceBets", "Home")</a>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Results</h2>
+        <p>Look at the results from the games this season!</p>
+        <a class="btn btn-primary" @Html.ActionLink("Game results", "OldResult", "Home")</a>
     </div>
 </div>

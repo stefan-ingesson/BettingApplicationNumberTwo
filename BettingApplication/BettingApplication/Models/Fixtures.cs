@@ -16,6 +16,9 @@ namespace BettingApplication.Models
         //public int count { get; set; }
         public List<Fixture> fixtures { get; set; }
 
+
+
+
         public class Link
         {
             public string self { get; set; }
@@ -99,5 +102,6 @@ namespace BettingApplication.Models
         //  public int count { get; set; }
         //  public List<Fixture> fixtures { get; set; }
         //}
+
     }
 }

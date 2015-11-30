@@ -1,0 +1,71 @@
+﻿@model BettingApplication.Models.FixtureViewModel
+
+@{
+    ViewBag.Title = "View results";
+}
+
+<h2>View results</h2>
+
+<div id="current" class="well-sm">
+
+       <p>
+            @using (Html.BeginForm("OldResult", "Home", FormMethod.Get))
+            {
+            <p>
+    @*Välj omgång: @Html.DropDownList(model => model)*@
+
+    @Html.DropDownList("matchday", Model.matchDays)
+     <input type="submit">         
+            </p>
+            }
+   
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.homeTeam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.goalsHomeTeam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.goalsAwayTeam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.awayTeam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.matchDays)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.fixtures)
+            {
+               
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.homeTeamName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.result.goalsHomeTeam)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.result.goalsAwayTeam)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.awayTeamName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.matchday)
+                        </td>
+                    </tr>
+                
+            }
+
+        </table>
+
+
+
+
+
+

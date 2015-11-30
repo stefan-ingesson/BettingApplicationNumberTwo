@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using BettingApplication.Models;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace BettingApplication.Controllers
 {
@@ -17,6 +18,7 @@ namespace BettingApplication.Controllers
 
         public ActionResult Index()
         {
+
             return View();
         }
 
@@ -34,7 +36,14 @@ namespace BettingApplication.Controllers
 
             return View();
         }
+<<<<<<< HEAD
       
+=======
+
+
+
+
+>>>>>>> refs/remotes/origin/dev
         public ActionResult MatchApi()
         {
 
@@ -132,6 +141,63 @@ namespace BettingApplication.Controllers
             }
             LeagueTable leagueTable = JsonConvert.DeserializeObject<LeagueTable>(response.Content.ReadAsStringAsync().Result);
             return View("ListTable", leagueTable.standing);
+        }
+
+        public ViewResult OldResult(int? matchday)
+        {
+           
+            var client = new HttpClient();
+
+            var game = new HttpRequestMessage
+            {
+                RequestUri = new Uri("http://api.football-data.org/v1/soccerseasons/398/fixtures?matchday"),
+                Method = HttpMethod.Get
+            };
+
+
+
+            game.Headers.Add("X-Auth-Token", "3a5878e758b14d71bd774070afd07d69");
+
+            HttpResponseMessage response = client.SendAsync(game).Result;
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                //return response.Content.ReadAsStringAsync().Result;
+                throw new ArgumentException();
+            }
+
+            var fixtures = JsonConvert.DeserializeObject<Fixtures>(response.Content.ReadAsStringAsync().Result);
+
+            var userChoice = from p in fixtures.fixtures
+                             select p;
+            userChoice = userChoice.Where(p => p.matchday.Equals(matchday));
+
+
+
+            var model = new FixtureViewModel
+               {
+                   fixtures = from gameDay in fixtures.fixtures where gameDay.matchday.Equals(matchday) select gameDay,
+                   //matchDays = fixtures.fixtures.Select(element => element.matchday  { day = element.matchday}).Distinct()
+
+
+                   matchDays = fixtures.fixtures.Select(m => new SelectListItem
+           {
+               Value = m.matchday.ToString(),
+               Text = m.matchday.ToString(),
+           }).Distinct(new SelectListItemComparer())
+           .ToList()
+               };
+
+
+            if (matchday == null)
+            {
+                matchday = 1;
+            }
+
+
+            return View(model);
+
+            //return View("OldResult", fixtures.fixtures);
         }
     }
 }
