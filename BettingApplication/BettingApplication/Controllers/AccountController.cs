@@ -494,7 +494,7 @@ namespace BettingApplication.Controllers
         public ActionResult ProfileEdit([Bind]FacebookViewModel model)
         {
             var db = new ApplicationDbContext();
-            var profile = new ApplicationUser();
+            var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
             if (Request.Form["accountprofileedit-submit"] != null)
             {
                 if (ModelState.IsValid)

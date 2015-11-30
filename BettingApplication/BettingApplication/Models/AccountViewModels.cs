@@ -111,8 +111,7 @@ namespace BettingApplication.Models
     }
     public class FacebookViewModel
     {
-        [Required]
-        [Display(Name = "name")]
+        
         public string Name { get; set; }
         public string ImageURL { get; set; }
         public string Age { get; set; }
