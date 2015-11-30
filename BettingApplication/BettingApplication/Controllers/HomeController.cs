@@ -98,7 +98,7 @@ namespace BettingApplication.Controllers
       //Indexsidan för PlaceBets! Place bet and POST!
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PlaceUserBets([Bind(Include = "Id,UserEmail,PlacedBets")]UserDetails userDetail)
+        public ActionResult PlaceUserBets([Bind(Include = "Id, PlacedBets")]UserDetails userDetail)
         {
           if (ModelState.IsValid)
           {
