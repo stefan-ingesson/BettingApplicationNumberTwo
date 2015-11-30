@@ -228,3 +228,10 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+BettingApplication/BettingApplication/App_Data/aspnet-BettingApplication-20151124034542.mdf
+BettingApplication/BettingApplication/App_Data/aspnet-BettingApplication-20151124034542.mdf
+BettingApplication/BettingApplication/bin/BettingApplication.dll
+BettingApplication/BettingApplication/bin/BettingApplication.dll
+BettingApplication/BettingApplication/obj/Debug/BettingApplication.pdb
+BettingApplication/BettingApplication/obj/Debug/BettingApplication.csproj.GenerateResource.Cache
+BettingApplication/BettingApplication/obj/Debug/BettingApplication.dll

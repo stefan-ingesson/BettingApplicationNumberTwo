@@ -471,7 +471,9 @@ namespace BettingApplication.Controllers
         [Authorize]
         public async Task<ActionResult> Profile()
         {
-            var profile = new ApplicationUser();
+            var db = new ApplicationDbContext();
+
+            var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
             var facebook = new FacebookViewModel();
             var claimsforUser = await UserManager.GetClaimsAsync(User.Identity.GetUserId());
             var access_token = claimsforUser.FirstOrDefault(x => x.Type == "FacebookAccessToken").Value;
