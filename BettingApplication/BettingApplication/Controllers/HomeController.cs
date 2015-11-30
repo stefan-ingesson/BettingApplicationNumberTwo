@@ -36,14 +36,7 @@ namespace BettingApplication.Controllers
 
             return View();
         }
-<<<<<<< HEAD
-      
-=======
 
-
-
-
->>>>>>> refs/remotes/origin/dev
         public ActionResult MatchApi()
         {
 
@@ -107,19 +100,18 @@ namespace BettingApplication.Controllers
       //Indexsidan för PlaceBets! Place bet and POST!
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PlaceUserBets([Bind(Include = "Id, PlacedBets")]UserDetails userDetail)
+        [Authorize(Users = "andreas.wahlberg@live.se")]
+      public ActionResult PlaceUserBets([Bind(Include = "HomeTeamWins, Draw, AwayTeamWins")]Bets userBets)
         {
           if (ModelState.IsValid)
           {
-            db.Entry(userDetail).State = EntityState.Modified;
+            db.Entry(userBets).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Profile","Account");
           }
 
-          return View(userDetail);
+          return View(userBets);
         }
-
-        
 
         public ViewResult ListTable()
         {

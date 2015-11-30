@@ -164,12 +164,12 @@ C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\S
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\System.Web.WebPages.Deployment.xml
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\System.Web.WebPages.Razor.xml
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\System.Web.Optimization.xml
-C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
-C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.Profileform.resources
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.Form.resources
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.profile.resources
-C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csproj.GenerateResource.Cache
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.New.resources
-C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csprojResolveAssemblyReference.cache
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.test.resources
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csproj.GenerateResource.Cache
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.rumpa.resources

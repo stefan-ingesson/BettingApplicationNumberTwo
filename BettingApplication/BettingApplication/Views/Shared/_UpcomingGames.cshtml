@@ -2,7 +2,7 @@
 @using System.Web.UI.WebControls
 @using BettingApplication.Models
 @using Microsoft.Ajax.Utilities
-@model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
+@model <BettingApplication.Models.UserBetsVM>
 
 @{
   ViewBag.Title = "_UpcomingGames";
@@ -79,10 +79,10 @@
 
     <tr>
       <th>
-        @Html.DisplayNameFor(model => model.homeTeamName)
+        @Html.DisplayNameFor(model => model.homeTeam)
       </th>
       <th>
-        @Html.DisplayNameFor(model => model.awayTeamName)
+        @Html.DisplayNameFor(model => model.awayTeam)
       </th>
       <th>
         @Html.DisplayNameFor(model => model.date)
@@ -108,10 +108,10 @@
       {
         <tr>
           <td>
-            @Html.DisplayFor(modelItem => list[i].homeTeamName)
+            @Html.DisplayFor(modelItem => list[i].homeTeam)
           </td>
           <td>
-            @Html.DisplayFor(modelItem => list[i].awayTeamName)
+            @Html.DisplayFor(modelItem => list[i].awayTeam)
           </td>
           <td>
             @Html.DisplayFor(modelItem => list[i].date)
