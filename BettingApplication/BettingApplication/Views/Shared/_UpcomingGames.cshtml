@@ -2,7 +2,7 @@
 @using System.Web.UI.WebControls
 @using BettingApplication.Models
 @using Microsoft.Ajax.Utilities
-@model <BettingApplication.Models.UserBetsVM>
+@model IEnumerable<BettingApplication.Models.UserBetsVM>
 
 @{
   ViewBag.Title = "_UpcomingGames";
@@ -16,10 +16,10 @@
   <table class="table table-striped">
     <tr>
       <th>
-        @Html.DisplayNameFor(model => model.homeTeamName)
+        @Html.DisplayNameFor(model => model.homeTeam)
       </th>
       <th>
-        @Html.DisplayNameFor(model => model.awayTeamName)
+        @Html.DisplayNameFor(model => model.awayTeam)
       </th>
       <th>
         @Html.DisplayNameFor(model => model.date)
@@ -45,22 +45,22 @@
         {
           <tr>
             <td>
-              @Html.DisplayFor(modelItem => item.homeTeamName)
+              @Html.DisplayFor(modelItem => item.homeTeam)
             </td>
             <td>
-              @Html.DisplayFor(modelItem => item.awayTeamName)
+              @Html.DisplayFor(modelItem => item.awayTeam)
             </td>
             <td>
               @Html.DisplayFor(modelItem => item.date)
             </td>
             <td>
-              @Html.RadioButtonFor(modelItem => item.HomeTeamWins, item.Id, new { @class = "chk", id = "chk1", name = "1" })
+              @Html.RadioButtonFor(modelItem => item.HomeTeamWins, new { @class = "chk", id = "chk1", name = "1" })
             </td>
             <td>
-              @Html.RadioButtonFor(modelItem => item.Draw, item.Id, new { @class = "chk", id = "chk2", name = "1" })
+              @Html.RadioButtonFor(modelItem => item.Draw, new { @class = "chk", id = "chk2", name = "1" })
             </td>
             <td>
-              @Html.RadioButtonFor(modelItem => item.AwayTeamWins, item.Id, new { @class = "chk", id = "chk3", name = "1" })
+              @Html.RadioButtonFor(modelItem => item.AwayTeamWins, new { @class = "chk", id = "chk3", name = "1" })
             </td>
           </tr>
         }

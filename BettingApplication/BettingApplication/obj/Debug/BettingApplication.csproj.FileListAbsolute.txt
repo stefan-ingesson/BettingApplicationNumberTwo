@@ -169,7 +169,8 @@ C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\D
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.profile.resources
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.New.resources
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.test.resources
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.rumpa.resources
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csproj.GenerateResource.Cache
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
-C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.rumpa.resources
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csprojResolveAssemblyReference.cache

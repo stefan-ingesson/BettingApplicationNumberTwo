@@ -66,7 +66,7 @@ namespace BettingApplication.Controllers
         }
 
         //Upcoming Games in patial views
-        public ActionResult _UpcomingGames()
+        public ActionResult _UpcomingGames(bool? homeWin, bool? draw, bool? awayWin)
         {
             var client = new HttpClient();
 
@@ -88,7 +88,19 @@ namespace BettingApplication.Controllers
 
             var fixtures = JsonConvert.DeserializeObject<Fixtures>(response.Content.ReadAsStringAsync().Result);
 
-            return PartialView(fixtures.fixtures);
+            var model = new UserBetsVM
+            {
+              status = fixtures.fixtures.Where(bettings => false)
+            };
+
+          var userChoice = from p in fixtures.fixtures
+                           select p;
+
+          userChoice = userChoice.Where(p => p.HomeTeamWins == homeWin || p.Draw == draw || p.AwayTeamWins == awayWin);
+
+          var result = userChoice.ToList();
+
+            return PartialView(model);
         }
 
 
