@@ -1,8 +1,4 @@
-﻿@using System.Web.Mvc.Html
-@using System.Web.UI.WebControls
-@using BettingApplication.Models
-@using Microsoft.Ajax.Utilities
-@model IEnumerable<BettingApplication.Models.UserBetsVM>
+﻿@model IEnumerable<BettingApplication.Models.UserBetsVM>
 
 @{
   ViewBag.Title = "_UpcomingGames";
@@ -101,7 +97,7 @@
     @using (Html.BeginForm("PlaceUserBets", "Home", FormMethod.Post))
     {
       @Html.AntiForgeryToken()
-      
+
       var list = Model.ToList();
 
       for (int i = 0; i < list.Count; i++)
@@ -120,10 +116,10 @@
             @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, true, new {Name = "radio"})
           </td>
           <td>
-            @Html.RadioButtonFor(modelItem => list[i].Draw, true, new {Name = "radio" })
+            @Html.RadioButtonFor(modelItem => list[i].Draw, true, new {Name = "radio"})
           </td>
           <td>
-            @Html.RadioButtonFor(modelItem => list[i].AwayTeamWins, true, new {Name = "radio" })
+            @Html.RadioButtonFor(modelItem => list[i].AwayTeamWins, true, new {Name = "radio"})
           </td>
         </tr>
       }
@@ -131,14 +127,13 @@
   </table>
   <div class="form-group">
     <div class="col-md-offset-10 col-md-10">
-      <input type="submit" value="Place your bet" class="btn btn-success" />
+      <input type="submit" value="Place your bet" class="btn btn-success"/>
     </div>
   </div>
-  </div>
+</div>
 
 
-
-  @*<script>
+@*<script>
       $(function () {
         $('input.chk').change(function () {
           if ($('input.chk').length > 1) {
