@@ -113,9 +113,13 @@ C:\Users\Eliazzon\Documents\GitHub\BettingApplicationNumberTwo\BettingApplicatio
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.dll.config
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\BettingApplication.pdb
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Antlr3.Runtime.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\EntityFramework.dll
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\EntityFramework.SqlServer.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Facebook.dll
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\bin\Microsoft.Owin.Security.Cookies.dll
