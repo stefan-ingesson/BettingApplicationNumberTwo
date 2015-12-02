@@ -1,8 +1,6 @@
 ﻿@using System.Web.Mvc.Html
-@using System.Web.UI.WebControls
-@using BettingApplication.Models
-@using Microsoft.Ajax.Utilities
-@model IEnumerable<BettingApplication.Models.UserBetsVM>
+
+@model BettingApplication.Models.UserBetsVM
 
 @{
   ViewBag.Title = "_UpcomingGames";
@@ -12,71 +10,8 @@
 <h2>Upcoming matches</h2>
 
 
-@*<div class="well-sm">
-  <table class="table table-striped">
-    <tr>
-      <th>
-        @Html.DisplayNameFor(model => model.homeTeam)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.awayTeam)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.date)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.HomeTeamWins)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.Draw)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.AwayTeamWins)
-      </th>
-    </tr>
-
-    @using (Html.BeginForm())
-    {
-      int counter = 0;
-      foreach (var item in Model)
-      {
-        counter++;
-        if (counter > 1)
-        {
-          <tr>
-            <td>
-              @Html.DisplayFor(modelItem => item.homeTeam)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.awayTeam)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.HomeTeamWins, new { @class = "chk", id = "chk1", name = "1" })
-            </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.Draw, new { @class = "chk", id = "chk2", name = "1" })
-            </td>
-            <td>
-              @Html.RadioButtonFor(modelItem => item.AwayTeamWins, new { @class = "chk", id = "chk3", name = "1" })
-            </td>
-          </tr>
-        }
-      }
-    }
-  </table>
-
-  <button id="" type="button" class="btn btn-success" data-container="well" data-toggle="popover"
-          data-placement="bottom">
-    Place your bet´s
-  </button>
-</div>*@
-
 <div class="well-sm">
   <table class="table table-striped">
-
     <tr>
       <th>
         @Html.DisplayNameFor(model => model.homeTeam)
@@ -97,8 +32,11 @@
         @Html.DisplayNameFor(model => model.AwayTeamWins)
       </th>
     </tr>
+  </table>
+</div>
 
-    @using (Html.BeginForm("PlaceUserBets", "Home", FormMethod.Post))
+
+    @*@using (Html.BeginForm("PlaceUserBets", "Home", FormMethod.Post))
     {
       @Html.AntiForgeryToken()
       
@@ -134,17 +72,4 @@
       <input type="submit" value="Place your bet" class="btn btn-success" />
     </div>
   </div>
-  </div>
-
-
-
-  @*<script>
-      $(function () {
-        $('input.chk').change(function () {
-          if ($('input.chk').length > 1) {
-            $('input.chk').prop('checked', false);
-            $(this).prop('checked', true);
-          }
-        });
-      });
-    </script>*@
+  </div>*@

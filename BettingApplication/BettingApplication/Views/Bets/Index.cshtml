@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BettingApplication.Models.Bets>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlacedBets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeTeamWins)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Draw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AwayTeamWins)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacedBets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeTeamWins)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Draw)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AwayTeamWins)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

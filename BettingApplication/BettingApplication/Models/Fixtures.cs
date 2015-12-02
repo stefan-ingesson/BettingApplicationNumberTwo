@@ -70,6 +70,7 @@ namespace BettingApplication.Models
             public DateTime date { get; set; }
 
             public string status { get; set; }
+
             public int matchday { get; set; }
 
             [Display(Name = "Home")]

@@ -1,0 +1,58 @@
+﻿@model BettingApplication.Models.Bets
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bets</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacedBets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacedBets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeTeamWins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeTeamWins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Draw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Draw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwayTeamWins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwayTeamWins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Result)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

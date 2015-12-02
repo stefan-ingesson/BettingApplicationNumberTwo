@@ -178,6 +178,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -203,6 +204,10 @@
     <Compile Include="Migrations\201511301225422_rumpa.cs" />
     <Compile Include="Migrations\201511301225422_rumpa.Designer.cs">
       <DependentUpon>201511301225422_rumpa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512011925344_BettingController.cs" />
+    <Compile Include="Migrations\201512011925344_BettingController.Designer.cs">
+      <DependentUpon>201512011925344_BettingController.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -293,6 +298,11 @@
     <Content Include="Views\Home\ListTable.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Home\OldResult.cshtml" />
+    <Content Include="Views\Bets\Create.cshtml" />
+    <Content Include="Views\Bets\Delete.cshtml" />
+    <Content Include="Views\Bets\Details.cshtml" />
+    <Content Include="Views\Bets\Edit.cshtml" />
+    <Content Include="Views\Bets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511301225422_rumpa.resx">
       <DependentUpon>201511301225422_rumpa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512011925344_BettingController.resx">
+      <DependentUpon>201512011925344_BettingController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

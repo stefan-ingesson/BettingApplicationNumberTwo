@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -100,7 +101,9 @@ namespace BettingApplication.Controllers
 
           var result = userChoice.ToList();
 
-            return PartialView(model);
+            //return PartialView(typeof (IEnumerable<UserBetsVM>).ToString(),model);
+          return PartialView(model);
+
         }
 
 

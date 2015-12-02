@@ -174,3 +174,4 @@ C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\D
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.dll
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.pdb
 C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.csprojResolveAssemblyReference.cache
+C:\Koder\BettingApplicationNumberTwo\BettingApplication\BettingApplication\obj\Debug\BettingApplication.Migrations.BettingController.resources
