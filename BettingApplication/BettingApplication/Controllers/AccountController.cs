@@ -451,6 +451,7 @@ namespace BettingApplication.Controllers
                 // Retrieve the existing claims for the user and add the FacebookAccessTokenClaim
                 var currentClaims = await UserManager.GetClaimsAsync(user.Id);
                 var facebookAccessToken = claimsIdentity.FindAll("FacebookAccessToken").First();
+                
                 if (currentClaims.Count() > 0)
                 {
                     await UserManager.RemoveClaimAsync(user.Id, facebookAccessToken);
@@ -470,7 +471,9 @@ namespace BettingApplication.Controllers
         [Authorize]
         public async Task<ActionResult> Profile()
         {
-            var profile = new ApplicationDbContext();
+            var db = new ApplicationDbContext();
+
+            var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
             var facebook = new FacebookViewModel();
             var claimsforUser = await UserManager.GetClaimsAsync(User.Identity.GetUserId());
             var access_token = claimsforUser.FirstOrDefault(x => x.Type == "FacebookAccessToken").Value;
@@ -490,7 +493,8 @@ namespace BettingApplication.Controllers
         [HttpPost]
         public ActionResult ProfileEdit([Bind]FacebookViewModel model)
         {
-            var profile = new ApplicationDbContext();
+            var db = new ApplicationDbContext();
+            var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
             if (Request.Form["accountprofileedit-submit"] != null)
             {
                 if (ModelState.IsValid)
@@ -499,7 +503,7 @@ namespace BettingApplication.Controllers
                     profile.City = model.City;
                     profile.Age = model.Age;
                     profile.About_me = model.About_me;
-                    profile.SaveChanges();
+                    db.SaveChanges();
 
 
 

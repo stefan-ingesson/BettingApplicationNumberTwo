@@ -168,8 +168,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511260800442_Profile\form.cs" />
+    <Compile Include="Migrations\201511260801315_Form.cs" />
+    <Compile Include="Migrations\201511260801315_Form.Designer.cs">
+      <DependentUpon>201511260801315_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511260959538_profile.cs" />
+    <Compile Include="Migrations\201511260959538_profile.Designer.cs">
+      <DependentUpon>201511260959538_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\SelectListItemComparer.cs" />
+  <Compile Include="Models\DBViewModel.cs" />
     <Compile Include="Models\Fixtures.cs" />
     <Compile Include="Models\FixtureViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -243,7 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+
     <Folder Include="Views\Result\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -251,6 +264,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511260801315_Form.resx">
+      <DependentUpon>201511260801315_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511260959538_profile.resx">
+      <DependentUpon>201511260959538_profile.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

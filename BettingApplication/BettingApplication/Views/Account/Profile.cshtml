@@ -15,6 +15,7 @@
 <h2>@Model.Name</h2>
 
 <img src=@Model.ImageURL />
+<<<<<<< HEAD
 
     <div>
         @Html.LabelFor(model => model.City)
@@ -23,6 +24,23 @@
         @Html.DisplayFor(model => model.Age)
         @Html.LabelFor(model => model.About_me)
         @Html.DisplayFor(model => model.About_me)
+=======
+<div>
+    <ul>
+        <li>
+            @Html.LabelFor(model => model.City)
+            @Html.DisplayFor(model => model.City)
+        </li>
+        <li>
+            @Html.LabelFor(model => model.Age)
+            @Html.DisplayFor(model => model.Age)
+        </li>
+        <li>
+            @Html.LabelFor(model => model.About_me)
+            @Html.DisplayFor(model => model.About_me)
+        </li>
+    </ul>
+>>>>>>> refs/remotes/origin/Facebook/profile
 
 
     </div>

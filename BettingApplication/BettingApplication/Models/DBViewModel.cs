@@ -19,7 +19,7 @@ namespace BettingApplication.Models
                 return new ApplicationDbContext();
             }
 
-            public System.Data.Entity.DbSet<BettingApplication.Models.ApplicationUser> ApplicationUsers { get; set; }
+           // public System.Data.Entity.DbSet<BettingApplication.Models.ApplicationUser> ApplicationUsers { get; set; }
           
 
         
