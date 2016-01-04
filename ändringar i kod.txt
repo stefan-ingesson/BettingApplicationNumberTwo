@@ -1,0 +1,30 @@
+1) account controller - rad 483 - Felhantering om en användare inte har ett bet
+
+från början;
+
+ var roundId = db.UserBets.Where(user => user.RoundId == facebook.RoundId);
+          if (roundId != null)
+          {
+
+            facebook.RoundId = betid.RoundId;
+          }
+
+
+
+
+2) Ändrade betscontroller PointsEarned
+
+
+Innan: 
+   var user = User.Identity.GetUserId();
+      //return View("PointsEarned", result.GetResults(user));
+
+
+
+Efter:
+
+      var user = User.Identity.GetUserId();
+      return RedirectToAction("Profile", "Account");
+
+
+3) Ändrade i Profile cshtml, poängpresentation

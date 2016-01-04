@@ -1,5 +1,4 @@
-﻿@using System.Web.Mvc.Html
-@model BettingApplication.Models.Bets
+﻿@model BettingApplication.Models.Bets
 
 @{
     ViewBag.Title = "Create";
@@ -7,76 +6,115 @@
 
 <h2>Create</h2>
 
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="table-hover">
-    <tr>
+    <div class="form-horizontal">
+        <h4>Bets</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoundId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RoundId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RoundId, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-      @Html.LabelFor(model => model.HomeTeamWins)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match1, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-      @Html.RadioButtonFor(model => model.HomeTeamWins, "false", new {id = "home"})
-      @Html.RadioButtonFor(model => model.HomeTeamWins, "false", new { id = "home" })
-      @Html.RadioButtonFor(model => model.HomeTeamWins, "false", new { id = "home" })
-      @Html.ValidationMessageFor(model => model.HomeTeamWins, "", new {@class = "text-danger"})
-    </tr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match2, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-      <tr>
-        @Html.LabelFor(model => model.Draw)
-        @Html.RadioButtonFor(model => model.Draw, "false", new { id = "draw" })
-        @Html.ValidationMessageFor(model => model.Draw, "", new { @class = "text-danger" })
-      </tr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match3, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-      <tr>
-        @Html.LabelFor(model => model.AwayTeamWins)
-        @Html.RadioButtonFor(model => model.AwayTeamWins, "false", new {id = "away"})
-        @Html.ValidationMessageFor(model => model.AwayTeamWins, "", new {@class = "text-danger"})
-      </tr>
-      <table>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match4, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match4, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match4, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match5, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match5, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        @*@using (Html.BeginForm("Create", "Bets", FormMethod.Post))*@
-        {
-          @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match6, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match6, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match6, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-          var list = Model.ToList();
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match7, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match7, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match7, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-          for (int i = 0; i < list.Count; i++)
-          {
-            <tr>
-              <td>
-                @Html.DisplayFor(modelItem => list[i].homeTeam)
-              </td>
-              <td>
-                @Html.DisplayFor(modelItem => list[i].awayTeam)
-              </td>
-              <td>
-                @Html.DisplayFor(modelItem => list[i].date)
-              </td>
-              <td>
-                @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, true, new {Name = "radio"})
-              </td>
-              <td>
-                @Html.RadioButtonFor(modelItem => list[i].Draw, true, new {Name = "radio"})
-              </td>
-              <td>
-                @Html.RadioButtonFor(modelItem => list[i].AwayTeamWins, true, new {Name = "radio"})
-              </td>
-            </tr>
-          }
-        }
-      </table>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match8, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match8, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match8, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match9, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match9, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match9, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <div class="table-hover">
-      <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Create" class="btn btn-default" />
-      </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Match10, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Match10, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Match10, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
     </div>
-      </div>
-  }
+}
 
-  <div>
-      @Html.ActionLink("Back to List", "Index")
-  </div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

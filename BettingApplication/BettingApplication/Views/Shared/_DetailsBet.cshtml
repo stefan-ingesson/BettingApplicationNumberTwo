@@ -1,0 +1,44 @@
+﻿@model BettingApplication.Models.Bets
+
+@{
+  ViewBag.Title = "_DetailsBet";
+}
+
+<div>
+  <table class="table table">
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match1)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match2)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match3)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match4)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match5)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match6)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match7)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match8)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match9)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayFor(model => model.Match10)</td>
+    </tr>
+  </table>
+
+  @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary", @style = "color:white" })
+
+</div>
+­­­­­­­­­­­­­­­­­

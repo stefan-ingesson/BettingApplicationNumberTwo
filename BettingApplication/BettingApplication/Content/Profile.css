@@ -1,0 +1,40 @@
+﻿
+.img{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+
+
+.container body-content{
+     background-color: rgba(0,0,0,0.65);
+
+}
+
+
+
+.text {
+    height:100px;
+    display:inline-flex;
+    margin: 10px;
+    border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
+    border-color: rgb(252, 227, 176); 
+    background-color: #ffffcc; 
+    cursor: pointer;
+    -webkit-user-select: none;
+    
+}
+.text p {
+    height: 130px;
+    overflow: hidden;
+    }
+
+.content-text {
+    padding:0px 20px 10px;
+    margin: -5px;
+}
+
+.profile-container{
+   background: transparent;
+}

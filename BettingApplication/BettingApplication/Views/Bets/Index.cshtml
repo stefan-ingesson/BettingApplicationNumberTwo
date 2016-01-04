@@ -12,19 +12,37 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PlacedBets)
+            @Html.DisplayNameFor(model => model.RoundId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HomeTeamWins)
+            @Html.DisplayNameFor(model => model.Match1)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Draw)
+            @Html.DisplayNameFor(model => model.Match2)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AwayTeamWins)
+            @Html.DisplayNameFor(model => model.Match3)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Result)
+            @Html.DisplayNameFor(model => model.Match4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Match10)
         </th>
         <th></th>
     </tr>
@@ -32,19 +50,37 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.PlacedBets)
+            @Html.DisplayFor(modelItem => item.RoundId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HomeTeamWins)
+            @Html.DisplayFor(modelItem => item.Match1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Draw)
+            @Html.DisplayFor(modelItem => item.Match2)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AwayTeamWins)
+            @Html.DisplayFor(modelItem => item.Match3)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Result)
+            @Html.DisplayFor(modelItem => item.Match4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Match10)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

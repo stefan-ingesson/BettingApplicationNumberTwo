@@ -12,6 +12,8 @@ namespace BettingApplication.Models
 
         public IEnumerable<SelectListItem> matchDays { get; set; }
 
+        public List<Fixtures.Fixture> date { get; set; }
+
         public List<Fixtures.Fixture> status {get; set;}
 
         public List<Fixtures.HomeTeam> homeTeam { get; set; }
@@ -22,25 +24,5 @@ namespace BettingApplication.Models
 
         public List<Fixtures.Result> goalsAwayTeam { get; set; }
 
-
-
-        //public List<SelectListItem> GetMatchDayList(int? matchday)
-        //{
-
-        //    var query = fixtures.OrderByDescending(x => x.matchday).ToList()
-        //       .Select(x => new SelectListItem
-        //       {
-        //           Value = x.matchday.ToString(),
-        //           Text = x.matchday.ToString()
-        //       });
-
-        //    return (query).ToList();
-
-        //}
-
-
-       
-
-        //public int? matchDay { get; set; }
     }
 }

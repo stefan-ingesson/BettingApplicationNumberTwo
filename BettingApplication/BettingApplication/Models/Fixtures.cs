@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -7,10 +8,10 @@ namespace BettingApplication.Models
 {
     public class Fixtures
     {
-        public class ApplicationDbContext : DbContext
-        {
-            public DbSet<Fixture> Fixtures { get; set; }
-        }
+        //public class ApplicationDbContext : DbContext
+        //{
+        //    public DbSet<Fixture> Fixtures { get; set; }
+        //}
 
         //public List<Link> _links { get; set; }
         //public int count { get; set; }
@@ -103,6 +104,5 @@ namespace BettingApplication.Models
         //  public int count { get; set; }
         //  public List<Fixture> fixtures { get; set; }
         //}
-
     }
 }

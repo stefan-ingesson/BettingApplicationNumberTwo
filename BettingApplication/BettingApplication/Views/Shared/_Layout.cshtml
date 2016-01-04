@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - BET4HONOR - BettingGame</title>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -11,41 +11,67 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
+
+
+  <meta charset="UTF-8">
+  <title>Bet4Honor</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="~/Scripts/jquery-labelauty.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link href="~/Content/jquery-labelauty.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+  <style>
+    body {
+      padding-top: 80px;
+      word-wrap: break-word;
+      background-image: url('../../Content/Images/background.jpg');
+      /*no-repeat center center fixed;*/
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+  
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
+@Html.Partial("_FlashMessage")
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      @Html.ActionLink("BET4HONOR", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+        @*<li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("League table", "ListTable", "Home")</li>
-                    <li>@Html.ActionLink("Match Api", "MatchApi", "Home")</li>
-                    <li>@Html.ActionLink("Place a bet", "PlaceBets", "Home")</li>
-                    <li>@Html.ActionLink("Game results", "OldResult", "Home")</li>
-                    <li>@Html.ActionLink("Profile", "Profile", "Account")</li>
+        <li>@Html.ActionLink("League table", "ListTable", "Home")</li>
+        @*<li>@Html.ActionLink("Match Api", "MatchApi", "Home")</li>*@
+        <li>@Html.ActionLink("Place a bet", "PlaceBets", "Home")</li>
+        <li>@Html.ActionLink("Game results", "OldResult", "Home")</li>
+        <li>@Html.ActionLink("Profile", "Profile", "Account")</li>
 
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
+      </ul>
+      @Html.Partial("_LoginPartial")
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BET4HONOR</p>
-        </footer>
-    </div>
+  </div>
+</div>
+<div class="container body-content">
+  @RenderBody()
+  <hr/>
+  <footer>
+    <p>&copy; @DateTime.Now.Year - BET4HONOR</p>
+  </footer>
+</div>
 
 
 </body>

@@ -1,0 +1,29 @@
+﻿@model BettingApplication.Models.FixtureViewModel
+
+
+  <table class="table table-striped">
+    
+    @foreach (var item in Model.fixtures)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.homeTeamName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.result.goalsHomeTeam)
+        </td>
+        <td>
+          ­
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.result.goalsAwayTeam)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.awayTeamName)
+        </td>
+      </tr>
+    }
+  </table>
+  ­­­­­­­­­­­­­­­­­­­­­­­­­
+
+

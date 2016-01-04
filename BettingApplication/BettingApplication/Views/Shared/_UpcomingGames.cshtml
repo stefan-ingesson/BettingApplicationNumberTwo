@@ -1,75 +1,56 @@
 ﻿@using System.Web.Mvc.Html
 
-@model BettingApplication.Models.UserBetsVM
+@model IEnumerable<BettingApplication.Models.Fixtures.Fixture>
 
 @{
   ViewBag.Title = "_UpcomingGames";
 }
 
+  <div class="col-md-9">
 
-<h2>Upcoming matches</h2>
-
-
-<div class="well-sm">
-  <table class="table table-striped">
-    <tr>
-      <th>
-        @Html.DisplayNameFor(model => model.homeTeam)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.awayTeam)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.date)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.HomeTeamWins)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.Draw)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.AwayTeamWins)
-      </th>
-    </tr>
-  </table>
-</div>
+    <table class="table table-hover">
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.homeTeamName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.awayTeamName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.date)
+        </th>
+      </tr>
 
 
-    @*@using (Html.BeginForm("PlaceUserBets", "Home", FormMethod.Post))
-    {
-      @Html.AntiForgeryToken()
-      
-      var list = Model.ToList();
-
-      for (int i = 0; i < list.Count; i++)
+      @foreach (var item in Model)
       {
         <tr>
           <td>
-            @Html.DisplayFor(modelItem => list[i].homeTeam)
+            @Html.DisplayFor(modelItem => item.homeTeamName)
           </td>
           <td>
-            @Html.DisplayFor(modelItem => list[i].awayTeam)
+            @Html.DisplayFor(modelItem => item.awayTeamName)
           </td>
           <td>
-            @Html.DisplayFor(modelItem => list[i].date)
-          </td>
-          <td>
-            @Html.RadioButtonFor(modelItem => list[i].HomeTeamWins, true, new {Name = "radio"})
-          </td>
-          <td>
-            @Html.RadioButtonFor(modelItem => list[i].Draw, true, new {Name = "radio" })
-          </td>
-          <td>
-            @Html.RadioButtonFor(modelItem => list[i].AwayTeamWins, true, new {Name = "radio" })
+            @Html.DisplayFor(modelItem => item.date)
           </td>
         </tr>
       }
-    }
-  </table>
-  <div class="form-group">
-    <div class="col-md-offset-10 col-md-10">
-      <input type="submit" value="Place your bet" class="btn btn-success" />
-    </div>
+    </table>
   </div>
-  </div>*@
+
+<div class="col-md-3"></div>
+<table>
+  <tr>
+    <td>
+      @{
+        Html.RenderAction("_CreateBet", "Bets");
+      }
+    </td>
+  </tr>
+</table>
+
+
+
+
+

@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <div class="jumbotron">
     <h1 style="font-size: 60px;">BET4HONOR - IN IT TO WIN IT</h1>
     <p class="lead"></p>
@@ -23,11 +24,11 @@
         <p>
           In order to place a good bet, make sure to take a look at the current league standings! 
         </p>
-        <a class="btn btn-primary" @Html.ActionLink("League table", "ListTable", "Home") </a>
+        <a class="btn btn-primary" @Html.ActionLink("League table", "ListTable", "Home")</a>
     </div>
     <div class="col-md-4">
         <h2>Place a bet</h2>
-        <p>Do you feel confident? Head over and place your bet instantly!</p>
+        <p>Do you feel confident? Head over and place your bet instantly! Remember to sign up first.</p>
         <a class="btn btn-primary" @Html.ActionLink("Place a bet", "PlaceBets", "Home")</a>
     </div>
     <div class="col-md-4">

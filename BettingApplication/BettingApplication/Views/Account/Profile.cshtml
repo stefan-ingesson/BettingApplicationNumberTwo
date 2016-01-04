@@ -1,77 +1,131 @@
 ﻿@model BettingApplication.Models.FacebookViewModel
 
 @{
-    ViewBag.Title = "Profile";
+  ViewBag.Title = "Profile";
 }
 
 
 
 <script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').focus()
-    })
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus();
+  })
+
 </script>
+<link href="~/Content/Profile.css" rel="stylesheet" />
+<div class="profile-container">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Edit you profile</button>
 
-<h2>@Model.Name</h2>
 
-<img src=@Model.ImageURL />
+  <h2>@Model.Name</h2>
 
-    <div>
+  <img src=@Model.ImageURL class="img"/>
+
+
+  <div class="text">
+    <div class="content-text">
+      <h3 class="lead">
         @Html.LabelFor(model => model.City)
+      </h3>
+      <p>
         @Html.DisplayFor(model => model.City)
+        <br>
+      </p>
+    </div>
+  </div>
+  <div class="text">
+    <div class="content-text">
+      <h3 class="lead">
         @Html.LabelFor(model => model.Age)
+      </h3>
+      <p>
         @Html.DisplayFor(model => model.Age)
+        <br>
+      </p>
+    </div>
+  </div>
+  <div class="text">
+    <div class="content-text">
+      <h3 class="lead">
         @Html.LabelFor(model => model.About_me)
+      </h3>
+      <p>
         @Html.DisplayFor(model => model.About_me)
+        <br>
+      </p>
+    </div>
+  </div>
 
+  <div class="col-md-9">
+    <h2>Premier League round @Html.Raw(Model.RoundId.Equals(Model.RoundId))</h2>
+    @Html.Action("_Result", "Home", new {matchday = Model.RoundId})
+      <div class="row">
+          <div class="col-md-1">
+             
+              <button class="btn btn-success" onclick="location.href='@Url.Action("PointsEarned", "Bets", new { id = Model.Id })'"> Calculate result </button>
+          </div>
+      </div>
+     
+  </div>
+  <div class="col-md-3">
+    <h2>Current bet!</h2>
+    @Html.Action("_DetailsBet", "Bets", new {id = Model.Id})
+  </div>
+
+
+
+
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="­1" role="dialog"
+     aria­labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data­dismiss="modal"></button>
+        <h4 class="modal-title">Change your profile</h4>
+      </div>
+      <div class="modal-body">
+        @using (Html.BeginForm("ProfileEdit", "Account", FormMethod.Post, new {id = "form­accountedit­appt", @class = "full­form"}))
+        {
+          <div class="editorlabel">
+            @Html.LabelFor(model => model.City)
+          </div>
+          <div class="editor­field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+          </div>
+          <div class="editor­label">
+            @Html.LabelFor(model => model.Age)
+          </div>
+          <div class="editor­field">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+          </div>
+          <div class="editor­label">
+            @Html.LabelFor(model => model.About_me)
+          </div>
+          <div class="editor­field">
+            @Html.EditorFor(model => model.About_me)
+            @Html.ValidationMessageFor(model => model.About_me)
+          </div>
+          <button type="submit" id="accountprofileedit-submit"
+          name="accountprofileedit-submit" value="Save" class="btn btn-primary"
+          style="margin-left: 5px;">
+            Save
+          </button>
+        }
+         
+      </div>
 
     </div>
+  </div>
+</div>
 
+   
 
-    <!-- Large modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Edit</button>
-
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Personlig information</h4>
-                </div>
-                <div class="modal-body">
-                    @using (Html.BeginForm("ProfileEdit", "Account", FormMethod.Post, new { id = "form-accountedit-appt", @class = "full-form" }))
-                    {
-                        <div class="editor-label">
-                            @Html.LabelFor(model => model.City)
-                        </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(model => model.City)
-                            @Html.ValidationMessageFor(model => model.City)
-                        </div>
-
-                        <div class="editor-label">
-                            @Html.LabelFor(model => model.Age)
-                        </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(model => model.Age)
-                            @Html.ValidationMessageFor(model => model.Age)
-                        </div>
-
-
-                        <div class="editor-label">
-                            @Html.LabelFor(model => model.About_me)
-                        </div>
-                        <div class="editor-field">
-                            @Html.EditorFor(model => model.About_me)
-                            @Html.ValidationMessageFor(model => model.About_me)
-                        </div>
-
-                        <button type="submit" id="accountprofileedit-submit" name="accountprofileedit-submit" value="Save" class="btn btn-primary" style="margin-left:5px;">Save</button>
-                    }
-
-
-
-
-                </div>
-            </div>
-
+@*@Html.("PointsEarned", "Bets", new { id = Model.Id })*@
+<div class="well-sm">
+    @Html.LabelFor(model => model.Points, "Correct matches from last week:")
+    @Html.Raw(Model.Points) /10
+</div>

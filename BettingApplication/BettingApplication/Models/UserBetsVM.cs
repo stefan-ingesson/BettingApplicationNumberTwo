@@ -5,11 +5,11 @@ using System.Data.Entity;
 namespace BettingApplication.Models
 {
 
-  public class UserBetsVM
+  public class UserBetsVM 
   {
     public Bets Bets { get; set; }
 
-    public IEnumerable<Fixtures.Fixture> status { get; set; }
+    public Fixtures.Fixture status { get; set; }
 
     public Fixtures.Fixture date { get; set; }
 

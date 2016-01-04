@@ -109,16 +109,23 @@ namespace BettingApplication.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
     public class FacebookViewModel
     {
-        [Required]
-        [Display(Name = "name")]
-        public string Name { get; set; }
-        public string ImageURL { get; set; }
-        public string Age { get; set; }
-        public string City { get; set; }
-        public string About_me { get; set; }
-        public FacebookViewModel() { }
+      public int Id { get; set; }
+      public int RoundId { get; set; }
+      public string UserId { get; set; }
+      public int Points { get; set; }
+      public string Name { get; set; }
+      public string ImageURL { get; set; }
+
+      [Range(1, 100, ErrorMessage = "är ej en siffra")]
+      public string Age { get; set; }
+
+      public string City { get; set; }
+
+      [Display(Name = "Funny facts")]
+      public string About_me { get; set; }
 
     }
 }

@@ -470,43 +470,64 @@ namespace BettingApplication.Controllers
         [Authorize]
         public async Task<ActionResult> Profile()
         {
-            var profile = new ApplicationDbContext();
-            var facebook = new FacebookViewModel();
-            var claimsforUser = await UserManager.GetClaimsAsync(User.Identity.GetUserId());
-            var access_token = claimsforUser.FirstOrDefault(x => x.Type == "FacebookAccessToken").Value;
-            var fb = new FacebookClient(access_token);
-            dynamic myInfo = fb.Get("/me");
-            facebook.ImageURL = @"http://graph.facebook.com/" + myInfo.id + "/picture";
-            facebook.Name = myInfo.name;
-            facebook.City = profile.City;
-            facebook.Age = profile.Age;
-            facebook.About_me = profile.About_me;
+          var db = new ApplicationDbContext();
+          var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
+          var facebook = new FacebookViewModel();
+
+          var betid = db.UserBets.Where(user => user.UserId == profile.Id).OrderByDescending(bets => bets.Id).FirstOrDefault();
+          if (betid != null)
+          {
+            facebook.Id = betid.Id;
+          }
+
+      
 
 
+          var roundId = db.UserBets.Where(user => user.RoundId == facebook.RoundId);
+          if (roundId != null)
+          {
+            facebook.RoundId = betid.RoundId;
+          }
 
-            return View(facebook);
+          var points = db.UserBets.Where(user => user.Points == facebook.Points);
+          if (points != null)
+          {
+            facebook.Points = betid.Points;
+          }
+
+          var claimsforUser = await UserManager.GetClaimsAsync(User.Identity.GetUserId());
+          var access_token = claimsforUser.FirstOrDefault(x => x.Type == "FacebookAccessToken").Value;
+          var fb = new FacebookClient(access_token);
+          dynamic myInfo = fb.Get("/me");
+          facebook.ImageURL = @"http://graph.facebook.com/" + myInfo.id + "/picture";
+          facebook.Name = myInfo.name;
+          facebook.City = profile.City;
+          facebook.Age = profile.Age;
+          facebook.About_me = profile.About_me;
+
+          //get result
+          var result = new ApiDataCollector();
+          var matches = new FixtureViewModel();
+
+          return View(facebook);
         }
 
         [HttpPost]
         public ActionResult ProfileEdit([Bind]FacebookViewModel model)
         {
-            var profile = new ApplicationDbContext();
-            if (Request.Form["accountprofileedit-submit"] != null)
-            {
-                if (ModelState.IsValid)
-                {
-                    //// logic to store form data in DB
-                    profile.City = model.City;
-                    profile.Age = model.Age;
-                    profile.About_me = model.About_me;
-                    profile.SaveChanges();
-
-
-
-                    return RedirectToAction("Profile");
-                }
-            }
-            return RedirectToAction("Profile");
+          var db = new ApplicationDbContext();
+          var profile = db.Users.FirstOrDefault(user => user.UserName == User.Identity.Name);
+          if (Request.Form["accountprofileedit-submit"] == null) return RedirectToAction("Profile");
+          if (!ModelState.IsValid) return RedirectToAction("Profile");
+          //// logic to store form data in DB
+          if (profile != null)
+          {
+            profile.City = model.City;
+            profile.Age = model.Age;
+            profile.About_me = model.About_me;
+          }
+          db.SaveChanges();
+          return RedirectToAction("Profile");
         }
 
         #region Helpers

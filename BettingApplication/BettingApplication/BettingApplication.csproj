@@ -29,6 +29,24 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1" Enabled="True">
+          <Destination Path="" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Data Source=tcp:a5546lhhfs.database.windows.net,1433%3bInitial Catalog=Bet4HonorDb%3bUser ID=Bet4HonorDbLogin%40a5546lhhfs%3bPassword=0Pruttludd!" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="LocalDbConnection-Deployment" Order="2" xmlns="">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-WebApplication2-20151124125147.mdf%3bInitial Catalog=aspnet-WebApplication2-20151124125147%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\LocalDbConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -185,32 +203,57 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201511260800442_Profile\form.cs" />
-    <Compile Include="Migrations\201511260801315_Form.cs" />
-    <Compile Include="Migrations\201511260801315_Form.Designer.cs">
-      <DependentUpon>201511260801315_Form.cs</DependentUpon>
+    <Compile Include="Migrations\201512080953414_Initial.cs" />
+    <Compile Include="Migrations\201512080953414_Initial.Designer.cs">
+      <DependentUpon>201512080953414_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511260959538_profile.cs" />
-    <Compile Include="Migrations\201511260959538_profile.Designer.cs">
-      <DependentUpon>201511260959538_profile.cs</DependentUpon>
+    <Compile Include="Migrations\201512081110177_Bets.cs" />
+    <Compile Include="Migrations\201512081110177_Bets.Designer.cs">
+      <DependentUpon>201512081110177_Bets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511261402562_New.cs" />
-    <Compile Include="Migrations\201511261402562_New.Designer.cs">
-      <DependentUpon>201511261402562_New.cs</DependentUpon>
+    <Compile Include="Migrations\201512081118060_tisdag.cs" />
+    <Compile Include="Migrations\201512081118060_tisdag.Designer.cs">
+      <DependentUpon>201512081118060_tisdag.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511271343013_test.cs" />
-    <Compile Include="Migrations\201511271343013_test.Designer.cs">
-      <DependentUpon>201511271343013_test.cs</DependentUpon>
+    <Compile Include="Migrations\201512081341502_fis.cs" />
+    <Compile Include="Migrations\201512081341502_fis.Designer.cs">
+      <DependentUpon>201512081341502_fis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511301225422_rumpa.cs" />
-    <Compile Include="Migrations\201511301225422_rumpa.Designer.cs">
-      <DependentUpon>201511301225422_rumpa.cs</DependentUpon>
+    <Compile Include="Migrations\201512081435373_assssure.cs" />
+    <Compile Include="Migrations\201512081435373_assssure.Designer.cs">
+      <DependentUpon>201512081435373_assssure.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512011925344_BettingController.cs" />
-    <Compile Include="Migrations\201512011925344_BettingController.Designer.cs">
-      <DependentUpon>201512011925344_BettingController.cs</DependentUpon>
+    <Compile Include="Migrations\201512090830352_robins.cs" />
+    <Compile Include="Migrations\201512090830352_robins.Designer.cs">
+      <DependentUpon>201512090830352_robins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512090909449_Steve.cs" />
+    <Compile Include="Migrations\201512090909449_Steve.Designer.cs">
+      <DependentUpon>201512090909449_Steve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512110818439_points.cs" />
+    <Compile Include="Migrations\201512110818439_points.Designer.cs">
+      <DependentUpon>201512110818439_points.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512110835028_testazure.cs" />
+    <Compile Include="Migrations\201512110835028_testazure.Designer.cs">
+      <DependentUpon>201512110835028_testazure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512110925287_lkkoikj.cs" />
+    <Compile Include="Migrations\201512110925287_lkkoikj.Designer.cs">
+      <DependentUpon>201512110925287_lkkoikj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111006081_khh.cs" />
+    <Compile Include="Migrations\201512111006081_khh.Designer.cs">
+      <DependentUpon>201512111006081_khh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111008124_dsd.cs" />
+    <Compile Include="Migrations\201512111008124_dsd.Designer.cs">
+      <DependentUpon>201512111008124_dsd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApiDataCollector.cs" />
     <Compile Include="Models\Bets.cs" />
     <Compile Include="Models\SelectListItemComparer.cs" />
     <Compile Include="Models\Fixtures.cs" />
@@ -227,6 +270,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\background.jpg" />
+    <Content Include="Content\Images\input-checked.png" />
+    <Content Include="Content\Images\input-unchecked.png" />
+    <Content Include="Content\jquery-labelauty.css" />
+    <Content Include="Content\Profile.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -248,6 +296,7 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-labelauty.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -258,7 +307,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -303,6 +354,12 @@
     <Content Include="Views\Bets\Details.cshtml" />
     <Content Include="Views\Bets\Edit.cshtml" />
     <Content Include="Views\Bets\Index.cshtml" />
+    <Content Include="Views\Shared\_CreateBet.cshtml" />
+    <Content Include="Views\Shared\_FlashMessage.cshtml" />
+    <Content Include="Views\Shared\_Result.cshtml" />
+    <Content Include="Views\Shared\_DetailsBet.cshtml" />
+    <Content Include="Views\Shared\_UpcomingEdit.cshtml" />
+    <Content Include="Views\Bets\PointsEarned.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,23 +373,41 @@
     <EmbeddedResource Include="Migrations\201511260800442_Profile\form.resx">
       <DependentUpon>form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511260801315_Form.resx">
-      <DependentUpon>201511260801315_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512080953414_Initial.resx">
+      <DependentUpon>201512080953414_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511260959538_profile.resx">
-      <DependentUpon>201511260959538_profile.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512081110177_Bets.resx">
+      <DependentUpon>201512081110177_Bets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511261402562_New.resx">
-      <DependentUpon>201511261402562_New.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512081118060_tisdag.resx">
+      <DependentUpon>201512081118060_tisdag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511271343013_test.resx">
-      <DependentUpon>201511271343013_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512081341502_fis.resx">
+      <DependentUpon>201512081341502_fis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511301225422_rumpa.resx">
-      <DependentUpon>201511301225422_rumpa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512081435373_assssure.resx">
+      <DependentUpon>201512081435373_assssure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512011925344_BettingController.resx">
-      <DependentUpon>201512011925344_BettingController.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512090830352_robins.resx">
+      <DependentUpon>201512090830352_robins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512090909449_Steve.resx">
+      <DependentUpon>201512090909449_Steve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110818439_points.resx">
+      <DependentUpon>201512110818439_points.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110835028_testazure.resx">
+      <DependentUpon>201512110835028_testazure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110925287_lkkoikj.resx">
+      <DependentUpon>201512110925287_lkkoikj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111006081_khh.resx">
+      <DependentUpon>201512111006081_khh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111008124_dsd.resx">
+      <DependentUpon>201512111008124_dsd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,51 +7,104 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Bets</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PlacedBets)
-        </dt>
+  <h4>Bets</h4>
+  <hr/>
+  <dl class="dl-horizontal">
+    <dt>
+      @Html.DisplayNameFor(model => model.RoundId)
+    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PlacedBets)
-        </dd>
+    <dd>
+      @Html.DisplayFor(model => model.RoundId)
+    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeTeamWins)
-        </dt>
+    <dt>
+      @Html.DisplayNameFor(model => model.Match1)
+    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HomeTeamWins)
-        </dd>
+    <dd>
+      @Html.DisplayFor(model => model.Match1)
+    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Draw)
-        </dt>
+    <dt>
+      @Html.DisplayNameFor(model => model.Match2)
+    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Draw)
-        </dd>
+    <dd>
+      @Html.DisplayFor(model => model.Match2)
+    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AwayTeamWins)
-        </dt>
+    <dt>
+      @Html.DisplayNameFor(model => model.Match3)
+    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AwayTeamWins)
-        </dd>
+    <dd>
+      @Html.DisplayFor(model => model.Match3)
+    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Result)
-        </dt>
+    <dt>
+      @Html.DisplayNameFor(model => model.Match4)
+    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Result)
-        </dd>
+    <dd>
+      @Html.DisplayFor(model => model.Match4)
+    </dd>
 
-    </dl>
+    <dt>
+      @Html.DisplayNameFor(model => model.Match5)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match5)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Match6)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match6)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Match7)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match7)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Match8)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match8)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Match9)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match9)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.Match10)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.Match10)
+    </dd>
+
+  </dl>
 </div>
+
+@*@{
+  Html.RenderPartial("_Result");
+}*@
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +17,10 @@ namespace BettingApplication.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string Age { get; set; }
+        public string City { get; set; }
+        [Display(Name = "Funny facts")]
+        public string About_me { get; set; }
     }
 
     public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -27,11 +32,8 @@ namespace BettingApplication.Models
 
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+          return new ApplicationDbContext();
         }
-        public string Age { get; set; }
-        public string City { get; set; }
-        public string About_me { get; set; }
 
     }
 }
